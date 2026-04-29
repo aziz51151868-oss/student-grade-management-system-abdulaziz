@@ -23,19 +23,26 @@ public class StudentGradeSystem {
             System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
             
-            // Basic error handling for non-integer menu choices
             if (input.hasNextInt()) {
                 choice = input.nextInt();
                 input.nextLine(); // Clear the newline character from the buffer
             } else {
-                System.out.println("Invalid input! Please enter a number between 1 and 6.");
-                input.nextLine(); // Clear the invalid input
+                System.out.println("Invalid input! Please enter a number.");
+                input.nextLine(); 
                 continue;
             }
 
-            // Implementation for choices will go here
             if (choice == 1) {
-                // Logic for adding students will be in the next step
+                System.out.print("Enter student name: ");
+                String name = input.nextLine();
+                System.out.print("Enter student grade: ");
+                int grade = input.nextInt();
+                
+                // Store the data
+                studentNames[studentCount] = name;
+                studentGrades[studentCount] = grade;
+                studentCount++;
+                System.out.println("Student added successfully!");
             }
         }
         
