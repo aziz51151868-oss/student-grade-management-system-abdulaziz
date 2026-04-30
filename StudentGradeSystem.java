@@ -62,6 +62,23 @@ public class StudentGradeSystem {
                     }
                 }
             }
+            else if (choice == 3) {
+                System.out.print("Enter student name: ");
+                String searchName = input.nextLine();
+                boolean found = false;
+                
+                for (int i = 0; i < studentCount; i++) {
+                    if (studentNames[i].equalsIgnoreCase(searchName)) {
+                        System.out.println(studentNames[i] + "'s Grade: " + studentGrades[i]);
+                        found = true;
+                        break;
+                    }
+                }
+                
+                if (!found) {
+                    System.out.println("Student not found.");
+                }
+            }
         }
         input.close();
     }
