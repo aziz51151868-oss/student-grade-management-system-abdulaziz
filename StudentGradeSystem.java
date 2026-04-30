@@ -52,6 +52,16 @@ public class StudentGradeSystem {
                     }
                 }
             }
+            else if (choice == 2) {
+                System.out.println("\nList of Students and Grades:");
+                if (studentCount == 0) {
+                    System.out.println("No records found.");
+                } else {
+                    for (int i = 0; i < studentCount; i++) {
+                        System.out.println(studentNames[i] + " - " + studentGrades[i]);
+                    }
+                }
+            }
         }
         input.close();
     }
