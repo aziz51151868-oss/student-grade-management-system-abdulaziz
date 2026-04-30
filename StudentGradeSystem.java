@@ -25,28 +25,34 @@ public class StudentGradeSystem {
             
             if (input.hasNextInt()) {
                 choice = input.nextInt();
-                input.nextLine(); // Clear the newline character from the buffer
+                input.nextLine(); 
             } else {
-                System.out.println("Invalid input! Please enter a number.");
+                System.out.println("Invalid input!");
                 input.nextLine(); 
                 continue;
             }
 
             if (choice == 1) {
-                System.out.print("Enter student name: ");
-                String name = input.nextLine();
-                System.out.print("Enter student grade: ");
-                int grade = input.nextInt();
-                
-                // Store the data
-                studentNames[studentCount] = name;
-                studentGrades[studentCount] = grade;
-                studentCount++;
-                System.out.println("Student added successfully!");
+                // Check if the array is full
+                if (studentCount >= 50) {
+                    System.out.println("Capacity reached! Cannot add more students.");
+                } else {
+                    System.out.print("Enter student name: ");
+                    String name = input.nextLine();
+                    System.out.print("Enter student grade: ");
+                    int grade = input.nextInt();
+                    
+                    // Grade range validation
+                    if (grade >= 0 && grade <= 100) {
+                        studentNames[studentCount] = name;
+                        studentGrades[studentCount] = grade;
+                        studentCount++;
+                    } else {
+                        System.out.println("Invalid grade! Please enter a value between 0 and 100.");
+                    }
+                }
             }
         }
-        
-        System.out.println("Exiting the program. Goodbye!");
         input.close();
     }
 }
