@@ -79,6 +79,18 @@ public class StudentGradeSystem {
                     System.out.println("Student not found.");
                 }
             }
+            else if (choice == 4) {
+                if (studentCount == 0) {
+                    System.out.println("Class Average: 0.0");
+                } else {
+                    double sum = 0;
+                    for (int i = 0; i < studentCount; i++) {
+                        sum += studentGrades[i];
+                    }
+                    double average = sum / studentCount;
+                    System.out.println("Class Average: " + average);
+                }
+            }
         }
         input.close();
     }
