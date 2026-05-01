@@ -91,6 +91,25 @@ public class StudentGradeSystem {
                     System.out.println("Class Average: " + average);
                 }
             }
+            else if (choice == 5) {
+                if (studentCount == 0) {
+                    System.out.println("No students available.");
+                } else {
+                    int highestIdx = 0;
+                    int lowestIdx = 0;
+
+                    for (int i = 1; i < studentCount; i++) {
+                        if (studentGrades[i] > studentGrades[highestIdx]) {
+                            highestIdx = i;
+                        }
+                        if (studentGrades[i] < studentGrades[lowestIdx]) {
+                            lowestIdx = i;
+                        }
+                    }
+                    System.out.println("Highest Grade: " + studentNames[highestIdx] + " - " + studentGrades[highestIdx]);
+                    System.out.println("Lowest Grade: " + studentNames[lowestIdx] + " - " + studentGrades[lowestIdx]);
+                }
+            }
         }
         input.close();
     }
